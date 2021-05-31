@@ -33,13 +33,13 @@ A Cordova plugin that exposes a small subset of the fuctions from the Android Pa
 
 Note that each of the functions also only returns a subset of the total data provided by the Package Manager classes.
 
-Forked from a package by Fernando Arce ([here](https://github.com/fbsanches/cordova-plugin-packagemanager)).
+Forked from a package ([here](https://github.com/citadelgroup/cordova-plugin-android-packagemanager)).
 
 ## Installation
 
 There is currently no NPM package available for this fork, and no current current plans to make this available via a NPM repo.
 
-    cordova plugin add https://github.com/citadelgroup/cordova-plugin-android-packagemanager
+    cordova plugin add https://github.com/akshat666/cordova-plugin-android-packagemanager
 
 ### Usage
 

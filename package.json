@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-android-packagemanager",
-  "version": "0.2.3",
+  "version": "0.0.1",
   "description": "Cordova plugin that exposes a small subset of the fuctions from the Android Package Manager.",
   "cordova": {
     "id": "cordova-plugin-android-packagemanager",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/citadelgroup/cordova-plugin-android-packagemanager"
+    "url": "https://github.com/akshat666/cordova-plugin-android-packagemanager"
   },
   "keywords": [
     "cordova",
@@ -20,6 +20,6 @@
     "package-Info",
     "Apps-Info"
   ],
-  "author": "Citadel Group (based on fork from Fernando Arce)",
+  "author": "Akshat Joshi (based on fork from citadelgroup)",
   "license": "Apache-2.0"
 }
