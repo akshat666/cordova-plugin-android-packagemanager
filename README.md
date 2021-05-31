@@ -182,6 +182,9 @@ intent.addCategory(Intent.CATEGORY_LAUNCHER);
 
 The flags parameter to this function is _always_ `PackageManager.GET_META_DATA`.
 The intent can be dynamically created from Javascript end.
+The 3rd paramter to the function is the "Intent Action" and the 4th paramter is the "URL" which will become the Uri.
+
+Example: The list the apps which can open a URL.
 
 ```javascript
 window.plugins.packagemanager.queryIntentActivities(
