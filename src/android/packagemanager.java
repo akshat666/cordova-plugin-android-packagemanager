@@ -13,6 +13,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageInfo;
 import android.content.pm.ResolveInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.net.Uri;
 import android.os.Build;
 import android.util.Log;
 
@@ -128,9 +129,25 @@ public class packagemanager extends CordovaPlugin {
     }
 
     private static List<JSONObject> queryIntentActivities(PackageManager pm, JSONArray args) throws JSONException {
+        Intent intent = null;
+        if (args != null && args.length() == 2) {
+            String action = ((JSONArray)args.get(0)).get(0).toString();
+            String uri = ((JSONArray)args.get(1)).get(0).toString();
+            switch(action){
+                case "ACTION_VIEW":
+                    intent = new Intent(Intent.ACTION_VIEW);
+                    break;
+                default:
+                    intent = new Intent(Intent.ACTION_MAIN);
+                    break;
+            }
+            intent.setData(Uri.parse(uri));
+        } else {
+            intent = new Intent(Intent.ACTION_MAIN, null);
+            intent.addCategory(Intent.CATEGORY_LAUNCHER);
+        }
+
         ArrayList<JSONObject> pkgList = new ArrayList<JSONObject>();
-        Intent intent = new Intent(Intent.ACTION_MAIN, null);
-        intent.addCategory(Intent.CATEGORY_LAUNCHER);
 
         List<ResolveInfo> apps = pm.queryIntentActivities(intent, PackageManager.GET_META_DATA);
         for (ResolveInfo resolveInfo : apps) {

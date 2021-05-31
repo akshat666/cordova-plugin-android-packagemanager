@@ -181,12 +181,20 @@ intent.addCategory(Intent.CATEGORY_LAUNCHER);
 ```
 
 The flags parameter to this function is _always_ `PackageManager.GET_META_DATA`.
+The intent can be dynamically created from Javascript end.
 
 ```javascript
 window.plugins.packagemanager.queryIntentActivities(
-    successCallback,
-    errorCallback
-);
+      (data) => {
+        console.log(JSON.stringify(data,null,'\t'));
+      },
+      (error) => {
+        console.log(JSON.stringify(error));
+      },
+      ["ACTION_VIEW"],
+      ["https://www.google.com"]
+    );
+  },
 ```
 
 The function will always return an array (empty if no results). The array will be of the form:
