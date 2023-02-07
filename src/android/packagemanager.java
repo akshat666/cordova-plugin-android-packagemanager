@@ -1,4 +1,4 @@
-package au.com.citadelgroup.android;
+package com.troofy.android;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
