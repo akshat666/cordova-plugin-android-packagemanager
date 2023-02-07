@@ -149,7 +149,7 @@ public class packagemanager extends CordovaPlugin {
 
         ArrayList<JSONObject> pkgList = new ArrayList<JSONObject>();
 
-        List<ResolveInfo> apps = pm.queryIntentActivities(intent, PackageManager.GET_META_DATA);
+        List<ResolveInfo> apps = pm.queryIntentActivities(intent, PackageManager.MATCH_ALL);
         for (ResolveInfo resolveInfo : apps) {
             JSONObject jsonAppInfo = applicationInfoToJson(pm, resolveInfo.activityInfo.applicationInfo);
             pkgList.add(jsonAppInfo);
